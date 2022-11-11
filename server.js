@@ -1,11 +1,13 @@
 const Container = require('./main') // Importing Container class
 const products = new Container('products.txt') // Create new instance of class Container
+const PORT = process.env.PORT || 3001
+
 
 const express = require('express')
 const app = express()
 
-const server = app.listen(8080 , ()=> {
-    console.log(`Servidor HTTP escuchando en el puerto ${server.address().port}`)
+const server = app.listen(PORT , ()=> {
+    console.log(`Servidor HTTP escuchando en el puerto ${PORT}`)
 })
 
 app.get('/productos', async (req, res) => {
